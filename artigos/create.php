@@ -1,12 +1,6 @@
 <?php
 require('../config.php');
 
-// Prioridade
-$query = "SELECT * FROM artigos";
-$stmt = $db->prepare($query);
-$stmt->execute();
-$prioridades = $stmt->fetchAll();
-
 // Categoria
 $query = "SELECT * FROM categorias";
 $stmt = $db->prepare($query);
@@ -46,18 +40,18 @@ $categorias = $stmt->fetchAll();
             </div>
             <div class="mb-3">
                 <label for="preco" class="form-label">Escreva o preco</label>
-                <input type="number" step="1" class="form-control" id="preco" name="preco">
+                <input type="number" step="0.01" class="form-control" id="preco" name="preco">
             </div>
 
             <!-- Categorias -->
             <div class="mb-3">
-                <label for="categoria_id" class="form-label">Escolha a categoria</label>
-                <select name="categoria_id" id="categoria_id" class="form-select">
+                <label for="nome" class="form-label">Escolha a categoria</label>
+                <select name="nome" id="nome" class="form-select">
                     <option value=""></option>
                     <?php
                         foreach ($categorias as $categoria){
                     ?>
-                        <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['categoria'] ?></option>
+                        <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nome'] ?></option>
                     <?php
                         }
                     ?>

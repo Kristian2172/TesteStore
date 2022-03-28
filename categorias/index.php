@@ -41,6 +41,8 @@ $nr_categorias = $stmt->rowCount();
                     <tr>
                         <td scope="col">Id</td>
                         <td scope="col">Nome da categoria</td>
+                        <td scope="col">Desconto</td>
+                        <td scope="col">Ações</td>
                     </tr>
                     <br>
                 </thead>
@@ -51,11 +53,11 @@ $nr_categorias = $stmt->rowCount();
                     ?>
                         <tr>
                             <td><?php echo $categoria['id'] ?></td>
-                            <td><?php echo $categoria['categoria'] ?></td>
+                            <td><?php echo $categoria['nome'] ?></td>
+                            <td><?php echo $categoria['desconto'] ?></td>
 
                             <td>
                                 <a href="edit.php?id=<?php echo $categoria['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
-                                <a href="delete.php?id=<?php echo $categoria['id']; ?>" class="btn btn-danger btn-sm">Apagar</a>
                             </td>
 
                         </tr>

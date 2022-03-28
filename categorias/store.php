@@ -2,9 +2,10 @@
 require('../config.php');
 
 //Gravar na Base de dados
-$query = "INSERT INTO categorias (categoria) VALUES (:categoria)";
+$query = "INSERT INTO categorias (nome, desconto) VALUES (:nome, :desconto)";
 $stmt = $db->prepare($query);
-$stmt->bindParam(':categoria', $_POST['categoria']);
+$stmt->bindParam(':nome', $_POST['nome']);
+$stmt->bindParam(':desconto', $_POST['desconto']);
 $stmt->execute();
 ?>
 

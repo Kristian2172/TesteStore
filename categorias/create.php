@@ -20,10 +20,13 @@
 
         <form action="store.php" method="post">
             <div class="mb-3">
-                <label for="categoria" class="form-label">Escreva a categoria</label>
-                <input type="text" class="form-control" id="categoria" name="categoria">
+                <label for="nome" class="form-label">Escreva a categoria</label>
+                <input type="text" class="form-control" id="nome" name="nome">
             </div>
-            
+            <div class="mb-3">
+                <label for="desconto" class="form-label">Escreva o desconto</label>
+                <input type="number" step="0.01" class="form-control" id="desconto" name="desconto">
+            </div>
 
             <a href="index.php" class="btn btn-secondary">Voltar</a>
             <button type="submit" class="btn btn-primary">Confirmar</button>

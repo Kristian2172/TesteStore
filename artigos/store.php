@@ -2,12 +2,13 @@
 require ('../config.php');
 
 //Gravar na Base de dados
-$query = "INSERT INTO artigos (nome, stockatual, stockminimo, preco) VALUES (:nome, :stockatual, :stockminimo, :preco)";
+$query = "INSERT INTO artigos (nome, stockatual, stockminimo, preco, categoria_id) VALUES (:nome, :stockatual, :stockminimo, :preco, :categoria_id)";
 $stmt = $db->prepare($query);
 $stmt->bindParam(':nome', $_POST['nome']);
 $stmt->bindParam(':stockatual', $_POST['stockatual']);
 $stmt->bindParam(':stockminimo', $_POST['stockminimo']);
 $stmt->bindParam(':preco', $_POST['preco']);
+$stmt->bindParam(':categoria_id', $_POST['categoria_id']);
 $stmt->execute();
 ?>
 

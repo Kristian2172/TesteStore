@@ -3,11 +3,12 @@ require ('../config.php');
 
 //Gravar na Base de dados
 $query = "  UPDATE categorias 
-            SET categoria = :categoria
+            SET nome = :nome, desconto = :desconto
             WHERE id = :id
         ";
 $stmt = $db->prepare($query);
-$stmt->bindParam(':categoria', $_POST['categoria']);
+$stmt->bindParam(':nome', $_POST['nome']);
+$stmt->bindParam(':desconto', $_POST['desconto']);
 $stmt->bindParam(':id', $_POST['id']);
 $stmt->execute();
 ?>
