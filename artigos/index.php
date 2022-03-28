@@ -30,7 +30,7 @@ $stmt->execute();
     <div class="container">
         <?php
         if ($nr_artigos == 0) {
-            echo "<p><strong>Ainda sem artigos criados</strong></p>";?>
+            echo "<p><strong>Ainda sem artigos criados</strong></p>"; ?>
             <a href="create.php" class="btn btn-secondary btn-sm">Criar artigo</a><br> <br>
 
         <?php } else {
@@ -47,32 +47,33 @@ $stmt->execute();
                     </tr>
                 </thead>
                 <tbody>
-                        <?php 
-                            foreach ($artigos as $artigo) {
-                        ?>
-                                <tr>
-                                    <td><?php echo $artigo['id'] ?></td>
-                                    <td><?php echo $artigo['nome'] ?></td>
-                                    <td><?php echo $artigo['stockatual'] ?></td>
-                                    <td><?php echo $artigo['stockminimo'] ?></td>
-                                    <td><?php echo $artigo['preco'] ?></td>
-                                    <td><?php echo $artigo['nome_categoria'] ?></td>
-                                    <td>
-                                        <a href="delete.php?id=<?php echo $artigo['id'];?>" class="btn btn-danger btn-sm">Apagar</a>
-                                    </td>
+                    <?php
+                    foreach ($artigos as $artigo) {
+                    ?>
+                        <tr>
+                            <td><?php echo $artigo['id'] ?></td>
+                            <td><?php echo $artigo['nome'] ?></td>
+                            <td><?php echo $artigo['stockatual'] ?></td>
+                            <td><?php echo $artigo['stockminimo'] ?></td>
+                            <td><?php echo $artigo['preco'] ?></td>
+                            <td><?php echo $artigo['nome_categoria'] ?></td>
+                            <td>
+                                <a href="delete.php?id=<?php echo $artigo['id']; ?>" class="btn btn-danger btn-sm">Apagar</a>
+                            </td>
 
-                                </tr>
+                        </tr>
 
-                        <?php
-                            }
-                        ?>
-                        
-                    </tbody>
+                    <?php
+                    }
+                    ?>
+
+                </tbody>
             </table>
-
+            <a href="create.php" class="btn btn-secondary btn-sm">Criar artigo</a><br> <br>
         <?php
         }
         ?>
+
         <a href="../index.php" class="btn btn-secondary btn-sm">Voltar para o inicio</a>
 
 

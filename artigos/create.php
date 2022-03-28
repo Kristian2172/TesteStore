@@ -45,8 +45,8 @@ $categorias = $stmt->fetchAll();
 
             <!-- Categorias -->
             <div class="mb-3">
-                <label for="nome" class="form-label">Escolha a categoria</label>
-                <select name="nome" id="nome" class="form-select">
+                <label for="categoria_id" class="form-label">Escolha a categoria</label>
+                <select name="categoria_id" id="categoria_id" class="form-select">
                     <option value=""></option>
                     <?php
                         foreach ($categorias as $categoria){

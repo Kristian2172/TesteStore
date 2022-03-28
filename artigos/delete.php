@@ -26,7 +26,7 @@ $stmt->execute();
     <div class="container">
         <h1><?php echo $appName; ?></h1>
 
-        <a href="../index.php" class="btn btn-sm btn-success mb-2">Voltar à lista</a>
+        <a href="index.php" class="btn btn-sm btn-success mb-2">Voltar à lista</a>
 
         <div class="alert alert-success">
             Inscrição eliminada com sucesso

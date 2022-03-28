@@ -41,7 +41,7 @@ $nr_categorias = $stmt->rowCount();
                     <tr>
                         <td scope="col">Id</td>
                         <td scope="col">Nome da categoria</td>
-                        <td scope="col">Desconto</td>
+                        <td scope="col">Desconto(%)</td>
                         <td scope="col">Ações</td>
                     </tr>
                     <br>
