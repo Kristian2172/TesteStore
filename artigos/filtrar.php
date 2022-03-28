@@ -4,8 +4,12 @@ require('../config.php');
 //Consultar registos da Base de dados
 $query = "  SELECT a.id, a.nome, a.stockatual, a.stockminimo, a.preco, categorias.nome AS nome_categoria
             FROM artigos AS a
-            INNER JOIN categorias ON a.categoria_id = categorias.id";
+            INNER JOIN categorias ON a.categoria_id = categorias.id
+            -- Filtrar
+            WHERE categorias.id = :id"; 
 $stmt = $db->prepare($query);
+// Filtrar
+$stmt -> bindParam(':id', $_GET['id']);
 $stmt->execute();
 $artigos = $stmt->fetchAll();
 $nr_artigos = $stmt->rowCount();
@@ -70,7 +74,7 @@ $stmt->execute();
 
                 </tbody>
             </table>
-            <a href="create.php" class="btn btn-secondary btn-sm">Criar artigo</a><br> <br>
+            <a href="index.php" class="btn btn-secondary btn-sm">Voltar</a><br> <br>
         <?php
         }
         ?>

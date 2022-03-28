@@ -25,7 +25,7 @@ $nr_categorias = $stmt->rowCount();
 
 <body>
     <div class="container">
-        <h1>Criação de uma categoria</h1>
+        <h1>Consulta de categorias</h1>
 
         <?php
         if ($nr_categorias == 0) {
